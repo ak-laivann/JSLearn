@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout 2</title>
+    <style>
+        body{
+            margin: 120px;   
+        }
+        h1{
+            text-align:center;
+        }
+        .container{
+            box-shadow: 5px 5px 5px gray;
+            border: 1px solid gray;
+        }          
+        #header, #Footer{
+            background-color: yellow;
+            margin: 5px;
+            display: grid;
+            height: 20vh;
+            align-items: center;
+            width: auto;
+        }
+        #nav, #ads, #article{
+            display: inline-flex;
+            margin: 5px;
+            background-color: yellow;
+            height: 60vh;
+        }
+        
+        #nav{
+            position: relative;
+            width: 305px;
+        }
+        #article{
+            width: 1130px;
+        }
+        #ads{
+            position:relative;
+            width: 305px;
+        }
+    </style>
+</hea60%;ody>
+    <div class="flex-container">
+        <div class="header">
+            <h1>Grid Layout 2</h1>
+        </div>
+        <div class="container">
+            <div id="header">Header</div>
+            <div class="horizontal">
+                <div id="nav">Nav</div>
+                <div id="article">Article</div>
+                <div id="ads">Ads</div>
+            </div>
+            <div id="Footer">Footer</div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- #asdfgh -->
+asdfgh
