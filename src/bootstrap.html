@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap-ak</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .image{
+          height: 30px;
+          width: 30px;            
+        }
+        #headerr{
+            margin-left: 15%;
+            margin-right: 10%;
+        }
+        #second{
+            padding: 40px;
+            text-align: center;
+        } 
+        #start{
+            padding-right: 0px;
+        }
+        #home{
+            padding-right: 0px;
+        }   
+        #about{
+            padding-right: 0px;
+        }
+        #shop{
+            padding-right: 475px;
+        }
+        .card{
+            display: inline-block;
+        }
+        #cart{
+            border: 0px solid;
+        }
+        #whole1,#whole2{
+            margin: 0 auto auto 15%;
+        }
+        #card1,#card2,#card3,#card4,#card5,#card6,#card7,#card8{
+            margin: 0 auto;
+            width: 400px;
+            height: 200px;
+            background-color: #adadad;
+            text-align: center;
+            padding: 75px;
+            border: 1px solid gray;
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 45px;
+            border: 1px solid black;
+        }
+        #badgetext1,#badgetext2,#badgetext3,#badgetext4{
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            right: 16px;
+        }
+        .checked{
+            color: orange;
+        }
+        .fa{
+            margin-left: 20px;
+        }
+        canvas{
+            display: block;
+        }
+        #my-canvas{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 100;
+            visibility: hidden;
+        }
+        #my-canvas.active{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <header class="container-fluid">
+        <div id="headerr">
+            <ul class="nav nav-tabs">
+                <li id="start" class="nav-bar-nav ml-0 float-left"><a href="#" class="nav-link text-dark" >Start Bootstrap</a></li>
+                <li id="home" class="nav-bar-nav ml-0 float-left"><a href="#" class="nav-link text-dark small">Home</a></li>
+                <li id="about" class="nav-nav ml-0 float-left"><a href="#" class="nav-link text-secondary small">About us</a></li>
+                <li id="shop" class="nav-bav ml-0 dropdown-toggle float-left"><a href="#" class="nav-link text-secondary small">Shop</a></li>
+                <ul id="cart" class="nav-bar-nav mr-0 float-right">
+                    <li class="btn btn-light nav-link"><img src="https://image.shutterstock.com/image-vector/shopping-cart-icon-flat-design-260nw-570153007.jpg" class="image">cart<span class="badge rounded">6</span></li>
+                </ul>
+            </ul>
+        </div>
+    </header>
+    <div id="second" class="text-white bg-dark">
+        <h4>Shop in style</h4>
+        <p class="small text-secondary">with this shop homepage template</p>
+    </div>
+    <br>
+    <br>
+    <div id="whole1">
+        <div class="card" id="card_1" style="padding-right: 1px;">
+            <img id="card1" class="card-img-top text-dark" src="" alt="450X300">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Fancy Product</h5>
+                <p class="card-text" style="text-align: center;">$40.00-$80.00</p>
+                <br>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn1 data-toggle="modal" data-target="#exampleModal"">View Options</button>
+            </div>
+        </div>
+        <div class="card" id="card_2" style="padding-right: 1px;">
+            <img id="card2" class="card-img-top text-dark" src="" alt="450X300"><a id="badgetext1" href="#" class="badge text-white">sale</a>
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Special Item</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="card-text" style="text-align: center;"><s>$20.00</s>$18.00</p>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn2" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+        <div class="card" id="card_3" style="padding-right: 1px;">
+            <img id="card3" class="card-img-top text-dark" src="" alt="450X300"><a href="#" id="badgetext2" class="badge text-white">sale</a>
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Sale Item</h5>
+                <p class="card-text" style="text-align: center;"><s>$50.00</s>$25.00</p>
+                <br>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn3" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+        <div class="card" id="card_4" style="padding-right: 1px;">
+            <img id="card4" class="card-img-top text-dark" src="" alt="450X300">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Popular Item</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="card-text" style="text-align: center;">$40.00</p>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn4" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="whole2">
+        <div class="card" id="card_5" style="padding-right: 1px;">
+            <img id="card5" class="card-img-top text-dark" src="" alt="450X300">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Sale Item</h5>
+                <p class="card-text" style="text-align: center;"><s>$50.00</s>$25.00</p>
+                <br>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn5" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+        <div class="card" id="card_6" style="padding-right: 1px;">
+            <img id="card6" class="card-img-top text-dark" src="" alt="450X300"><a id="badgetext3" href="#" class="badge text-white">sale</a>
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Fancy Product</h5>
+                <p class="card-text" style="text-align: center;">$120.00-$280.00</p>
+                <br>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn6" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+        <div class="card" id="card_7" style="padding-right: 1px;">
+            <img id="card7" class="card-img-top text-dark" src="" alt="450X300"><a href="#" id="badgetext4" class="badge text-white">sale</a>
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Special Item</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="card-text" style="text-align: center;"><s>$20.00</s>$18.00</p>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn7" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+        <div class="card" id="card_8" style="padding-right: 1px;">
+            <img id="card8" class="card-img-top text-dark" src="" alt="450X300">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">Popular Item</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>    
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="card-text" style="text-align: center;">$40.00</p>
+                <br>
+                <button onclick="popup_msg()" class="btn" id="myBtn8" data-toggle="modal" data-target="#exampleModal">View Options</button>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <p>Yay!!! You have reached your destination!!</p>
+            </div>
+        </div>
+        <canvas id="my-canvas"></canvas>
+    </div>
+    <footer class="container-fluid bg-dark text-white" style="height: 80px; padding-top: 30px; text-align: center;">
+        <p class="small">Copyright@ Your Webiste 2022</p>
+    </footer>
+    <canvas id="canvas"></canvas>
+    <script src="js/bootstrap.js"></script>
+    <script src="index.min.js"></script>
+    <script>
+        let confe = document.querySelector('#my-canvas');
+
+        function popup_msg(){
+            confe.classList.add('active');
+        }
+        var confettiSettings = { target: 'my-canvas' };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+        $(document).ready(function(){
+            $("#myBtn1").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn2").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn3").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn4").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn5").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn6").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn7").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+        $(document).ready(function(){
+            $("#myBtn8").click(function(){
+                $("#exampleModal").modal("toggle");
+                window.alert("checking");
+            });
+        });
+    </script>
+</body>
+</html>
